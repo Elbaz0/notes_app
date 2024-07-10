@@ -8,7 +8,7 @@ class search_icon_widget extends StatelessWidget {
     return Container(
       height: 46,
       width: 46,
-      child: Center(
+      child: const Center(
         child: Icon(
           Icons.search,
           size: 35,

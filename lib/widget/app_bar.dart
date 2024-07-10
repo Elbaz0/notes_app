@@ -8,11 +8,11 @@ class Appbar_widget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
+        const Text(
           'Notes',
           style: TextStyle(fontSize: 35),
         ),
-        Spacer(
+        const Spacer(
           flex: 1,
         ),
         search_icon_widget(),

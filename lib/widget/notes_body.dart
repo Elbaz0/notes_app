@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widget/Show_Modal_bottom_sheet.dart';
 import 'package:note_app/widget/app_bar.dart';
 import 'package:note_app/widget/listview_notes.dart';
 
@@ -9,7 +10,14 @@ class Notes_body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return const Show_Modal_bottom_sheet();
+            },
+          );
+        },
         child: const Icon(Icons.add),
       ),
       body: const Padding(
@@ -19,6 +27,9 @@ class Notes_body extends StatelessWidget {
             height: 60,
           ),
           Appbar_widget(),
+          SizedBox(
+            height: 16,
+          ),
           listview_notes(),
         ]),
       ),

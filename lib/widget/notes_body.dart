@@ -26,7 +26,10 @@ class Notes_body extends StatelessWidget {
           SizedBox(
             height: 60,
           ),
-          Appbar_widget(),
+          Appbar_widget(
+            text: 'Notes',
+            icon: Icons.search,
+          ),
           SizedBox(
             height: 16,
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widget/custem_button.dart';
 import 'package:note_app/widget/custem_text_fild.dart';
 
 class Show_Modal_bottom_sheet extends StatelessWidget {
@@ -8,22 +9,31 @@ class Show_Modal_bottom_sheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 40,
-          ),
-          custem_text_fild(
-            hinttext: 'title',
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          custem_text_fild(
-            hinttext: 'content',
-            maxline: 5,
-          ),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            custem_text_fild(
+              hinttext: 'title',
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            custem_text_fild(
+              hinttext: 'content',
+              maxline: 5,
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            custem_Bottom(),
+            SizedBox(
+              height: 50,
+            ),
+          ],
+        ),
       ),
     );
   }

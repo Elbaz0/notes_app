@@ -22,14 +22,14 @@ class edit_notes_body extends StatelessWidget {
           SizedBox(
             height: 16,
           ),
-          custem_text_fild(hinttext: 'title'),
-          SizedBox(
-            height: 20,
-          ),
-          custem_text_fild(
-            hinttext: 'content',
-            maxline: 5,
-          )
+          // custem_text_fild(hinttext: 'title'),
+          // SizedBox(
+          //   height: 20,
+          // ),
+          // custem_text_fild(
+          //   hinttext: 'content',
+          //   maxline: 5,
+          // )
         ]),
       ),
     );

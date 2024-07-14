@@ -11,23 +11,21 @@ class Show_Modal_bottom_sheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        child: BlocConsumer<AddNoteCubit, AddNoteCubitState>(
-          listener: (context, state) {
-            if (state is AddNotesuccess) {
-              return Navigator.pop(context);
-            }
-            if (state is AddNotefaild) {
-              return print('errore ${state.erroremsg}');
-            }
-          },
-          builder: (context, state) {
-            return ModalProgressHUD(
-              child: Validate_show_modal(),
-              inAsyncCall: state is AddNoteloading ? true : false,
-            );
-          },
-        ),
+      child: BlocConsumer<AddNoteCubit, AddNoteCubitState>(
+        listener: (context, state) {
+          if (state is AddNotesuccess) {
+            return Navigator.pop(context);
+          }
+          if (state is AddNotefaild) {
+            return print('errore ${state.erroremsg}');
+          }
+        },
+        builder: (context, state) {
+          return ModalProgressHUD(
+            child: SingleChildScrollView(child: Validate_show_modal()),
+            inAsyncCall: state is AddNoteloading ? true : false,
+          );
+        },
       ),
     );
   }

@@ -6,6 +6,6 @@ class edit_notes_view extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const edit_notes_body();
+    return edit_notes_body();
   }
 }

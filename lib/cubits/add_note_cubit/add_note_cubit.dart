@@ -7,8 +7,8 @@ import 'package:note_app/models/note_model.dart';
 
 part 'add_note_cubit_state.dart';
 
-class AddNoteCubitCubit extends Cubit<AddNoteCubitState> {
-  AddNoteCubitCubit() : super(AddNoteCubitInitial());
+class AddNoteCubit extends Cubit<AddNoteCubitState> {
+  AddNoteCubit() : super(AddNoteCubitInitial());
 
   add_note(notes_model note) async {
     AddNoteloading();
@@ -17,7 +17,7 @@ class AddNoteCubitCubit extends Cubit<AddNoteCubitState> {
       emit(AddNotesuccess());
       await noteBox.add(note);
     } catch (e) {
-      AddNotefaild(erroremsg: e.toString());
+      AddNotefaild(e.toString());
     }
   }
 }

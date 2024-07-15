@@ -47,22 +47,27 @@ class _Validate_show_modalState extends State<Validate_show_modal> {
           const SizedBox(
             height: 30,
           ),
-          custem_Bottom(
-            ontap: () {
-              if (formkey.currentState!.validate()) {
-                formkey.currentState!.save();
-                BlocProvider.of<AddNoteCubit>(context).add_note(
-                  notes_model(
-                    title: title!,
-                    sub_title: subtitle!,
-                    date: DateTime.now().toString(),
-                    color: Colors.blue.value,
-                  ),
-                );
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+          BlocBuilder<AddNoteCubit, AddNoteCubitState>(
+            builder: (context, state) {
+              return custem_Bottom(
+                isloading: state is AddNoteloading ? true : false,
+                ontap: () {
+                  if (formkey.currentState!.validate()) {
+                    formkey.currentState!.save();
+                    BlocProvider.of<AddNoteCubit>(context).add_note(
+                      notes_model(
+                        title: title!,
+                        sub_title: subtitle!,
+                        date: DateTime.now().toString(),
+                        color: Colors.blue.value,
+                      ),
+                    );
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              );
             },
           ),
           const SizedBox(

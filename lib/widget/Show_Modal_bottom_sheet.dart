@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
 import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/widget/Validate_show_modal.dart';
 
@@ -29,7 +29,7 @@ class Show_Modal_bottom_sheet extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(
                     bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: SingleChildScrollView(
+                child: const SingleChildScrollView(
                   child: Validate_show_modal(),
                 ),
               ),

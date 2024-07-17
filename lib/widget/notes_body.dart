@@ -38,7 +38,7 @@ class Notes_body extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            listview_notes(),
+            Expanded(child: listview_notes()),
           ]),
         ),
       ),

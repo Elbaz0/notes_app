@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/models/note_model.dart';
 import 'package:note_app/widget/edit_notes_body.dart';
 
 class notes_item_widget extends StatelessWidget {
-  const notes_item_widget({super.key});
-
+  const notes_item_widget({super.key, required this.notes});
+  final notes_model notes;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -21,32 +22,37 @@ class notes_item_widget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: const Padding(
+                title: Padding(
                   padding: EdgeInsets.only(bottom: 16),
                   child: Text(
-                    'Flutter',
+                    notes.title,
                     style: TextStyle(fontSize: 26, color: Colors.black),
                   ),
                 ),
                 subtitle: Text(
-                  "Build your correct with bazookaaa",
+                  notes.sub_title,
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black.withOpacity(0.4),
                   ),
                 ),
-                trailing: const Icon(
-                  Icons.delete,
-                  size: 30,
+                trailing: IconButton(
+                  onPressed: () {
+                    notes.delete();
+                  },
+                  icon: Icon(
+                    Icons.delete,
+                    size: 30,
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 24),
                 child: Text(
-                  'date , 2024',
+                  notes.date,
                   style: TextStyle(
                     fontSize: 16,
-                    color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.4),
+                    color: Colors.black.withOpacity(0.4),
                   ),
                 ),
               )

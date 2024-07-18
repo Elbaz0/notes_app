@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/models/note_model.dart';
 import 'package:note_app/widget/custem_button.dart';
@@ -18,6 +19,7 @@ class _Validate_show_modalState extends State<Validate_show_modal> {
   GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? title, subtitle;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -59,7 +61,7 @@ class _Validate_show_modalState extends State<Validate_show_modal> {
                       notes_model(
                         title: title!,
                         sub_title: subtitle!,
-                        date: DateTime.now().toString(),
+                        date: DateTime.now().toString().substring(0, 10),
                         color: Colors.blue.value,
                       ),
                     );

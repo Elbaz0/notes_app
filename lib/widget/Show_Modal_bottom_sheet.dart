@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app/cubits/Notes_cubit/notes_cubit.dart';
 
 import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/widget/Validate_show_modal.dart';
@@ -17,11 +18,10 @@ class Show_Modal_bottom_sheet extends StatelessWidget {
         child: BlocConsumer<AddNoteCubit, AddNoteCubitState>(
           listener: (context, state) {
             if (state is AddNotesuccess) {
+              BlocProvider.of<NotesCubit>(context).view_notes();
               return Navigator.pop(context);
             }
-            if (state is AddNotefaild) {
-              return print('errore ${state.erroremsg}');
-            }
+            if (state is AddNotefaild) {}
           },
           builder: (context, state) {
             return AbsorbPointer(

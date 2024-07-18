@@ -21,8 +21,8 @@ class notes_item_widget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
+                title: const Padding(
+                  padding: EdgeInsets.only(bottom: 16),
                   child: Text(
                     'Flutter',
                     style: TextStyle(fontSize: 26, color: Colors.black),
@@ -35,7 +35,7 @@ class notes_item_widget extends StatelessWidget {
                     color: Colors.black.withOpacity(0.4),
                   ),
                 ),
-                trailing: Icon(
+                trailing: const Icon(
                   Icons.delete,
                   size: 30,
                 ),
@@ -46,7 +46,7 @@ class notes_item_widget extends StatelessWidget {
                   'date , 2024',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Color.fromARGB(255, 0, 0, 0).withOpacity(0.4),
+                    color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.4),
                   ),
                 ),
               )

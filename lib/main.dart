@@ -17,7 +17,8 @@ void main() async {
   await Hive.openBox<notes_model>(Kboxname);
 
   runApp(
-    DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp_Notes()),
+    // DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp_Notes()),
+    MyApp_Notes(),
   );
 }
 
@@ -27,8 +28,8 @@ class MyApp_Notes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+      // locale: DevicePreview.locale(context),
+      // builder: DevicePreview.appBuilder,
       theme: ThemeData(
         brightness: Brightness.dark,
         fontFamily: "Poppins",

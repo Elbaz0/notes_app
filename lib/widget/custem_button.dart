@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class custem_Bottom extends StatelessWidget {
-  const custem_Bottom({super.key, required this.ontap, this.isloading = false});
+  const custem_Bottom({super.key, this.ontap, this.isloading = false});
   final void Function()? ontap;
   final bool isloading;
   @override
@@ -14,18 +14,23 @@ class custem_Bottom extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15), color: Colors.blue),
         child: Center(
-            child: isloading
-                ? CircularProgressIndicator(
+          child: isloading
+              ? const SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: CircularProgressIndicator(
                     color: Colors.black,
-                  )
-                : Text(
-                    "Add",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )),
+                  ),
+                )
+              : const Text(
+                  "Add",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+        ),
       ),
     );
   }

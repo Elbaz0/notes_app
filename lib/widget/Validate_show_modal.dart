@@ -54,6 +54,7 @@ class _Validate_show_modalState extends State<Validate_show_modal> {
                 ontap: () {
                   if (formkey.currentState!.validate()) {
                     formkey.currentState!.save();
+
                     BlocProvider.of<AddNoteCubit>(context).add_note(
                       notes_model(
                         title: title!,

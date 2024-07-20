@@ -32,7 +32,7 @@ class _Validate_show_modalState extends State<Validate_show_modal> {
           ),
           custem_text_fild(
             hinttext: 'title',
-            onsave: (value) {
+            onChange: (value) {
               title = value;
             },
           ),
@@ -42,7 +42,7 @@ class _Validate_show_modalState extends State<Validate_show_modal> {
           custem_text_fild(
             hinttext: 'content',
             maxline: 5,
-            onsave: (value) {
+            onChange: (value) {
               subtitle = value;
             },
           ),

@@ -5,11 +5,13 @@ class custem_text_fild extends StatelessWidget {
     super.key,
     required this.hinttext,
     this.maxline = 1,
-    required this.onsave,
+    this.onsave,
+    required this.onChange,
   });
   final int maxline;
   final String hinttext;
   final void Function(String?)? onsave;
+  final void Function(String?)? onChange;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -19,6 +21,7 @@ class custem_text_fild extends StatelessWidget {
         }
       },
       onSaved: onsave,
+      onChanged: onChange,
       maxLines: maxline,
       decoration: InputDecoration(
         hintText: hinttext,
@@ -29,7 +32,7 @@ class custem_text_fild extends StatelessWidget {
   }
 
   OutlineInputBorder Border_style() {
-    return OutlineInputBorder(
+    return const OutlineInputBorder(
       borderRadius: BorderRadius.all(
         Radius.circular(15),
       ),
